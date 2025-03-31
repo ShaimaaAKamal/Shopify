@@ -1,0 +1,42 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #333;
+  color: white;
+  transition: width 0.3s;
+  overflow: hidden;
+
+  button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 10px;
+      text-align: left;
+
+      a {
+        color: white;
+        text-decoration: none;
+        display: block;
+      }
+    }
+  }
+}
+
+.collapsed {
+  width: 60px;
+
+  ul {
+    display: none;
+  }
+}
