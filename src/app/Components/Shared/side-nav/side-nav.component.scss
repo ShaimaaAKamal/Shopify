@@ -1,31 +1,24 @@
+@use '../../../../assets/styles/variables' as *;
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  background: #333;
-  color: white;
+  min-width: 250px;
+  min-height: 100vh;
+  background: $dark;
+  color: $light;
   transition: width 0.3s;
-  overflow: hidden;
-
-  button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
+  // overflow: hidden;
+  .sidenav-section-one{
+    border-bottom:.05px solid $secondary-light
   }
 
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
-
     li {
-      padding: 10px;
-      text-align: left;
+      text-align: center;
 
       a {
-        color: white;
+        color: $light;
         text-decoration: none;
         display: block;
       }
@@ -34,9 +27,5 @@
 }
 
 .collapsed {
-  width: 60px;
-
-  ul {
-    display: none;
-  }
+  min-width: 60px;
 }

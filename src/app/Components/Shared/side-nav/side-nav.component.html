@@ -1,9 +1,30 @@
-<div class="sidebar" [class.collapsed]="isCollapsed">
-  <button (click)="toggleSidebar()">☰</button>
-  <ul>
-    <li><a href="#">Dashboard</a></li>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Orders</a></li>
-    <li><a href="#">Settings</a></li>
+<!-- <div class="sidebar  p-2 d-flex flex-column" [class.collapsed]="isCollapsed"  (mouseenter)="toggleSidebar()" (mouseleave)="toggleSidebar()"> -->
+<div class="sidebar  p-2 d-flex flex-column" [class.collapsed]="isCollapsed">
+    <!-- <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="'Shopping'" [classes]="'mb-4 logo py-3'"> -->
+  <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="'Shopping'" [classes]="'mb-4 logo py-3'" (click)="toggleSidebar()">
+    <img src="assets/Images/Logo.png" alt="Logo Image" width="25px;"/>
+  </app-nav-item>
+
+ <div class="sidenav-section-one pb-3">
+   <ul  *ngFor="let navItem of sectionOneNavItems;">
+    <li>
+        <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="navItem.name"   [classes]="'py-3'">
+             <i [ngClass]="navItem.icon"></i>
+        </app-nav-item>
+    </li>
   </ul>
+ </div>
+  <div class="sidenav-section pt-3 d-flex flex-column justify-content-between flex-grow-1" >
+  <div >
+   <ul  *ngFor="let navItem of sectionTwoNavItems;">
+    <li >
+        <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="navItem.name"   [classes]="'py-3'">
+             <i [ngClass]="navItem.icon"></i>
+        </app-nav-item>
+    </li>
+  </ul>
+  </div>
+  <app-nav-sales-person [isCollapsed]="isCollapsed" [personImage]="personImage" [salesPersonName]="salesPersonName">
+  </app-nav-sales-person>
+ </div>
 </div>

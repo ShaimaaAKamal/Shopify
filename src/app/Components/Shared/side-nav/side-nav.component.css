@@ -1,18 +1,12 @@
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  background: #333;
-  color: white;
+  min-width: 250px;
+  min-height: 100vh;
+  background: #003535;
+  color: #eefffb;
   transition: width 0.3s;
-  overflow: hidden;
 }
-.sidebar button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  padding: 10px;
-  cursor: pointer;
+.sidebar .sidenav-section-one {
+  border-bottom: 0.05px solid rgba(252, 249, 249, 0.416);
 }
 .sidebar ul {
   list-style: none;
@@ -20,18 +14,14 @@
   margin: 0;
 }
 .sidebar ul li {
-  padding: 10px;
-  text-align: left;
+  text-align: center;
 }
 .sidebar ul li a {
-  color: white;
+  color: #eefffb;
   text-decoration: none;
   display: block;
 }
 
 .collapsed {
-  width: 60px;
-}
-.collapsed ul {
-  display: none;
+  min-width: 60px;
 }/*# sourceMappingURL=side-nav.component.css.map */
