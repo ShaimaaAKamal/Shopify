@@ -5,4 +5,23 @@ html {
   body{
   font-family: 'Poppins', sans-serif;
   }
+  .bg-light{
+    background-color: $light;
+  }
+  .bg-semi-light{
+    background-color: $semi-light;
+  }
+  .bg-second{
+    background-color: $secondary;
+  }
+  .fs-verySmall{
+    font-size:10px;
+  }
+  .hover-bg:hover {
+  background-color: $semi-dark ;
+  transition: background-color 0.3s ease;
+  }
+  .router-link-active{
+    background-color:$activeColor;
+  }
 }
