@@ -1,0 +1,25 @@
+.invoice-products .table-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.invoice-products table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.invoice-products thead, .invoice-products th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 2;
+  font-weight: 600;
+}
+.invoice-products rect, .invoice-products path {
+  stroke: #00857d;
+}
+.invoice-products .badge {
+  font-size: 0.6rem !important;
+  font-weight: 300;
+}
+.invoice-products td, .invoice-products th {
+  font-size: 0.9rem;
+}/*# sourceMappingURL=order-products.component.css.map */
