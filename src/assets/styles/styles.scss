@@ -15,7 +15,13 @@ html {
     background-color: $secondary;
   }
   .fs-verySmall{
-    font-size:10px;
+    font-size:10px !important;
+  }
+  .bg-dark{
+    background-color: $dark !important;
+  }
+  .bg-semi-dark{
+    background-color: $semi-dark;
   }
   .hover-bg:hover {
   background-color: $semi-dark ;
@@ -23,5 +29,12 @@ html {
   }
   .router-link-active{
     background-color:$activeColor;
+  }
+  .bg-white{
+    background-color: white;
+  }
+  .section-style{
+    border:.5px solid $secondary-light;
+    background-color: white;
   }
 }

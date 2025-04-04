@@ -14,12 +14,25 @@ html .bg-second {
   background-color: rgb(252, 249, 249);
 }
 html .fs-verySmall {
-  font-size: 10px;
+  font-size: 10px !important;
+}
+html .bg-dark {
+  background-color: #003535 !important;
+}
+html .bg-semi-dark {
+  background-color: #00857d;
 }
 html .hover-bg:hover {
   background-color: #00857d;
   transition: background-color 0.3s ease;
 }
 html .router-link-active {
-  background-color: #E;
+  background-color: #00b7a7;
+}
+html .bg-white {
+  background-color: white;
+}
+html .section-style {
+  border: 0.5px solid rgba(252, 249, 249, 0.416);
+  background-color: white;
 }/*# sourceMappingURL=styles.css.map */
