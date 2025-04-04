@@ -2,10 +2,10 @@
 .sidebar {
   min-width: 250px;
   min-height: 100vh;
+  height: 100%;
   background: $dark;
   color: $light;
   transition: width 0.3s;
-  // overflow: hidden;
   .sidenav-section-one{
     border-bottom:.05px solid $secondary-light
   }
@@ -29,3 +29,5 @@
 .collapsed {
   min-width: 60px;
 }
+
+
