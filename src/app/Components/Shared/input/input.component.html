@@ -1,1 +1,10 @@
-<p>input works!</p>
+
+    <div class="mb-3">
+      <label [for]="id" class="form-label">{{label}}</label>
+      <div class="position-relative">
+         <span class="position-absolute input-icon">
+           <ng-content #name></ng-content>
+          </span>
+         <input [type]="type" class="form-control" [id]="id" [placeholder]="placeholder"/>
+      </div>
+    </div>
