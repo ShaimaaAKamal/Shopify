@@ -1,1 +1,18 @@
-/*# sourceMappingURL=home.component.css.map */
+.section_2 {
+  min-width: 350px;
+}
+@media screen and (min-width: 1200px) {
+  .section_2 {
+    min-width: 400px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .section_2 {
+    min-width: 500px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .section_2 {
+    min-width: 700px;
+  }
+}/*# sourceMappingURL=home.component.css.map */
