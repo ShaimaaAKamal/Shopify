@@ -1,0 +1,74 @@
+<div class="d-flex flex-column h-100">
+
+  <div class="payment border-top border-bottom py-3" >
+    <h6 class="text-decoration-underline mb-2">Payment Methods</h6>
+    <div class="container-fluid px-0">
+      <div class="row gy-2">
+        <div class="col-12" *ngFor="let method of paymentMethods">
+          <div class="row align-items-center" [id]="method.label + ' Method'">
+            <div class="col-6 text-start">
+              <span>{{ method.label }} :</span>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                class="text-end"
+                [id]="method.id"
+                [name]="method.name"
+                [ngModel]="getModelValue(method.focusKey)"
+                (ngModelChange)="setModelValue(method.focusKey, $event)"
+                (focus)="setActiveInput(method.focusKey)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6 text-start"><span>Paid :</span></div>
+            <div class="col-6 text-end"><span>{{ getPaidAmount() }} SAR</span></div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6 text-start"><span>Reminder :</span></div>
+            <div class="col-6 text-end"><span>{{ calculateReminder() }} SAR</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="keyboard  py-3 d-flex justify-content-center align-items-start " >
+    <div class="row gy-2 w-100">
+      <div class="col-12" *ngFor="let row of keypad">
+        <div class="row g-2">
+          <div class="col flex-grow-1" *ngFor="let key of row">
+            <button class="w-100" (click)="enterKey(key)">{{ key }}</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="row gy-2">
+          <div class="col-12">
+            <button class="btn w-100 bg-dark text-light">Pay</button>
+          </div>
+
+          <div class="col-12">
+            <div class="row gx-2">
+              <div class="col-6">
+                <button class="btn w-100 bg-secondary text-light">Hold</button>
+              </div>
+              <div class="col-6">
+                <button class="btn w-100 bg-danger text-light">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
