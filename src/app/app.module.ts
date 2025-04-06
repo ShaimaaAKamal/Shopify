@@ -12,7 +12,12 @@ import { IndexComponent } from './Components/Main/Customers/index/index.componen
 import { EndDayComponent } from './Components/Main/end-day/end-day.component';
 import { SalesPersonComponent } from './Components/Main/sales-person/sales-person.component';
 import { ReturnOrderComponent } from './Components/Main/return-order/return-order.component';
-
+import { OrderProductsComponent } from './Components/Main/home/order-products/order-products.component';
+import { QuantityControlComponent } from './Components/Shared/quantity-control/quantity-control.component';
+import { SummaryComponent } from './Components/Main/home/summary/summary.component';
+import { FormsModule } from '@angular/forms';
+import { SelectInputComponent } from './Components/Shared/select-input/select-input.component';
+import { PaymentComponent } from './Components/Main/home/payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +30,17 @@ import { ReturnOrderComponent } from './Components/Main/return-order/return-orde
     IndexComponent,
     EndDayComponent,
     SalesPersonComponent,
-    ReturnOrderComponent
+    ReturnOrderComponent,
+    OrderProductsComponent,
+    QuantityControlComponent,
+    SummaryComponent,
+    SelectInputComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay())
