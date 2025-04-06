@@ -37,4 +37,15 @@ html {
     border:.5px solid $secondary-light;
     background-color: white;
   }
+  .summary,.payment{
+    input{
+      border-radius: 8px;
+      width:100%;
+      padding:6px;
+      border:none;
+      background-color: #f0f0f0;
+    }
+}
+
+
 }
