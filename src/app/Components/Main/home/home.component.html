@@ -4,10 +4,10 @@
   <div class="d-flex flex-column section-style rounded rounded-3 px-4 py-3" style="height: 100%;">
     <div class="flex-grow-0 searchInputs border-bottom">
       <app-input [id]="'findProductByName'" [label]="'Find By Name'" (input)="searchProductsByName($event)">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass" [class.d-none]="nameSearch"></i>
       </app-input>
       <app-input [id]="'findProductByBarcode'" [label]="'Find By Barcode'"  (input)="searchProductsByBarcode($event)">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass" [class.d-none]="barcodeSearch"></i>
       </app-input>
     </div>
     <div class="flex-grow-1 pb-3" style="min-height: 0;">
