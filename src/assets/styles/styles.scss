@@ -37,6 +37,14 @@ html {
     border:.5px solid $secondary-light;
     background-color: white;
   }
+  input{
+      &:focus{
+        border-color: $semi-dark !important;
+        box-shadow:2px 2px 2px 2px $semi-dark !important;
+      }
+  }
+
+
   .summary,.payment{
     input{
       border-radius: 8px;
