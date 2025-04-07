@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Components/Main/home/home.component';
-import { IndexComponent  as Customers} from './Components/Main/Customers/index/index.component';
-import { IndexComponent as Discounts } from './Components/Main/Discounts/index/index.component';
-import { IndexComponent  as Reports} from './Components/Main/Reports/index/index.component';
-import { IndexComponent as Settings} from './Components/Main/Settings/index/index.component';
+import { CustomersIndexComponent  as Customers} from './Components/Main/Customers/index/index.component';
+import { DiscountsIndexComponent as Discounts } from './Components/Main/Discounts/index/index.component';
+import { ReportsIndexComponent  as Reports} from './Components/Main/Reports/index/index.component';
+import { SettingsIndexComponent as Settings} from './Components/Main/Settings/index/index.component';
 import { EndDayComponent } from './Components/Main/end-day/end-day.component';
-import { IndexComponent as Orders } from './Components/Main/Orders/index/index.component';
-import { IndexComponent as Products} from './Components/Main/Products/index/index.component';
+import { OrdersIndexComponent as Orders } from './Components/Main/Orders/index/index.component';
+import { ProductsIndexComponent as Products} from './Components/Main/Products/index/index.component';
 import { SalesPersonComponent } from './Components/Main/sales-person/sales-person.component';
 import { ReturnOrderComponent } from './Components/Main/return-order/return-order.component';
 

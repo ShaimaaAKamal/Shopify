@@ -8,7 +8,7 @@ import { ActionBtnComponent } from './Components/Shared/action-btn/action-btn.co
 import { InputComponent } from './Components/Shared/input/input.component';
 import { NavItemComponent } from './Components/Shared/nav-item/nav-item.component';
 import { NavSalesPersonComponent } from './Components/Shared/nav-sales-person/nav-sales-person.component';
-import { IndexComponent } from './Components/Main/Customers/index/index.component';
+import { CustomersIndexComponent } from './Components/Main/Customers/index/index.component';
 import { EndDayComponent } from './Components/Main/end-day/end-day.component';
 import { SalesPersonComponent } from './Components/Main/sales-person/sales-person.component';
 import { ReturnOrderComponent } from './Components/Main/return-order/return-order.component';
@@ -18,6 +18,13 @@ import { SummaryComponent } from './Components/Main/home/summary/summary.compone
 import { FormsModule } from '@angular/forms';
 import { SelectInputComponent } from './Components/Shared/select-input/select-input.component';
 import { PaymentComponent } from './Components/Main/home/payment/payment.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { SettingsIndexComponent } from './Components/Main/Settings/index/index.component';
+import { DiscountsIndexComponent } from './Components/Main/Discounts/index/index.component';
+import { ReportsIndexComponent } from './Components/Main/Reports/index/index.component';
+import { OrdersIndexComponent } from './Components/Main/Orders/index/index.component';
+import { ProductsIndexComponent } from './Components/Main/Products/index/index.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +34,12 @@ import { PaymentComponent } from './Components/Main/home/payment/payment.compone
     InputComponent,
     NavItemComponent,
     NavSalesPersonComponent,
-    IndexComponent,
+    CustomersIndexComponent,
+    SettingsIndexComponent,
+    DiscountsIndexComponent,
+    ReportsIndexComponent,
+    OrdersIndexComponent,
+    ProductsIndexComponent,
     EndDayComponent,
     SalesPersonComponent,
     ReturnOrderComponent,
@@ -40,6 +52,7 @@ import { PaymentComponent } from './Components/Main/home/payment/payment.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ZXingScannerModule,
     FormsModule
   ],
   providers: [
