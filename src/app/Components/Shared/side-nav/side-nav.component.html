@@ -1,11 +1,12 @@
 <!-- <div class="sidebar  p-2 d-flex flex-column" [class.collapsed]="isCollapsed"  (mouseenter)="toggleSidebar()" (mouseleave)="toggleSidebar()"> -->
 <div class="sidebar  p-2 d-flex flex-column" [class.collapsed]="isCollapsed">
     <!-- <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="'Shopping'" [classes]="'mb-4 logo py-3'"> -->
-  <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="'Shopping'" [classes]="'mb-4 logo py-3'" (click)="toggleSidebar()">
+  <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="'Shopping'" [classes]="'mb-4 logo py-3'" (click)="toggleSidebar()" class="flex-grow-0">
     <img src="assets/Images/Logo.png" alt="Logo Image" width="25px;"/>
   </app-nav-item>
 
- <div class="sidenav-section-one pb-3">
+ <div class="flex-grow-1 d-flex flex-column overflow-auto">
+   <div class="sidenav-section-one pb-3">
    <ul  *ngFor="let navItem of sectionOneNavItems;">
     <li>
         <app-nav-item [isCollapsed]="isCollapsed" [navItemName]="navItem.name"   [classes]="'py-3'">
@@ -26,5 +27,6 @@
   </div>
   <app-nav-sales-person [isCollapsed]="isCollapsed" [personImage]="personImage" [salesPersonName]="salesPersonName">
   </app-nav-sales-person>
+ </div>
  </div>
 </div>
