@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -11,4 +11,24 @@ export class InputComponent {
 @Input() id:string="";
 @Input() label:string="";
 @Input() placeholder:string='';
+@ViewChild('inputRef') inputElement!: ElementRef;
+hideIconVar:boolean=false;
+
+get value(): string {
+    return this.inputElement?.nativeElement?.value || '';
+  }
+
+set value(val: string) {
+    if (this.inputElement) {
+      this.inputElement.nativeElement.value = val;
+    }
+  }
+
+  hideIcon(){
+    this.hideIconVar=true;
+  }
+  showIcon(){
+        this.hideIconVar=false;
+
+  }
 }

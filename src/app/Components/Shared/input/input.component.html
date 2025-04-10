@@ -6,10 +6,11 @@
     </div>
     <div class="col-12 col-md-8 col-xxl-9">
         <div class="position-relative flex-grow-1">
-         <span class="position-absolute input-icon">
+         <span class="position-absolute input-icon" [class.d-none]="hideIconVar">
            <ng-content #name></ng-content>
           </span>
-         <input [type]="type" class="form-control" [id]="id" [placeholder]="placeholder"/>
+         <input [type]="type" class="form-control" [id]="id" [placeholder]="placeholder" #inputRef
+         (focus)="hideIcon()" (blur)="showIcon()"/>
       </div>
     </div>
 
