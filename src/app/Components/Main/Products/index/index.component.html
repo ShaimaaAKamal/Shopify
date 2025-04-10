@@ -1,1 +1,22 @@
-<p>index works!</p>
+<div class="container-fluid  p-4">
+  <div class="row ">
+    <div class="col-12 bg-semi-dark py-2 px-3  rounded-top-3 border-bottom">
+      <app-page-controls  [route]="'/Add_New_Product'" [items]="products"  [sortKey]="'price'"></app-page-controls>
+    </div>
+    <div class="col-12 rounded-bottom-3 bg-white bg-danger  p-4 shadow-sm">
+      <app-no-items
+       [header]="'Add New Products'"
+       [subTitle]="'Start by stocking your store with products your customers will love'"
+       [BtnName]="'Add New Product'"
+       [route]="'/Add_New_Product'"
+       *ngIf="products.length == 0; else ProductTable">
+      </app-no-items>
+      <ng-template #ProductTable>
+      <app-table-data [rows]="products"
+      [columns]="columns"
+   >
+      </app-table-data>
+      </ng-template>
+    </div>
+  </div>
+</div>
