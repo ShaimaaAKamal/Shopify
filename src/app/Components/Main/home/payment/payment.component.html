@@ -1,7 +1,10 @@
 <div class="d-flex flex-column h-100">
 
   <div class="payment border-top border-bottom py-3" >
-    <h6 class="text-decoration-underline mb-2">Payment Methods</h6>
+  <div class="d-flex align-items-center justify-content-between  mb-2">
+      <h6 class="text-decoration-underline mb-0">Payment Methods</h6>
+      <span class="fs-verySmall text-danger" [class.d-none]="mustBePaid">Total Amount must be Paid</span>
+    </div>
     <div class="container-fluid px-0">
       <div class="row gy-2">
         <div class="col-12" *ngFor="let method of paymentMethods">
@@ -53,16 +56,16 @@
       <div class="col-12">
         <div class="row gy-2">
           <div class="col-12">
-            <button class="btn w-100 bg-dark text-light">Pay</button>
+            <button class="btn w-100 bg-dark text-light" (click)="pay_Order()">Pay</button>
           </div>
 
           <div class="col-12">
             <div class="row gx-2">
               <div class="col-6">
-                <button class="btn w-100 bg-secondary text-light">Hold</button>
+                <button class="btn w-100 bg-secondary text-light" (click)="hold_Order()">Hold</button>
               </div>
               <div class="col-6">
-                <button class="btn w-100 bg-danger text-light">Cancel</button>
+                <button class="btn w-100 bg-danger text-light" (click)="cancal_Order()">Cancel</button>
               </div>
             </div>
           </div>
