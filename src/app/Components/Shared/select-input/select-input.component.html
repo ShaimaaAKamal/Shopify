@@ -1,6 +1,7 @@
   <div>
           <label [id]="id" class="form-label">{{label}}</label>
           <select class="form-select" [id]="id" [name]="id" (change)="onSelectionChange($event)">
-            <option  *ngFor="let option of options" [value]="option">{{option}}</option>
+            <option value="noCustomer">Select Customer</option>
+            <option  *ngFor="let option of options" [value]="option[value]">{{option[prop]}}</option>
           </select>
  </div>
