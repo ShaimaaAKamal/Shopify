@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,13 @@ import { DiscountsIndexComponent } from './Components/Main/Discounts/index/index
 import { ReportsIndexComponent } from './Components/Main/Reports/index/index.component';
 import { OrdersIndexComponent } from './Components/Main/Orders/index/index.component';
 import { ProductsIndexComponent } from './Components/Main/Products/index/index.component';
+import { PageControlsComponent } from './Components/Shared/page-controls/page-controls.component';
+import { SiteButtonComponent } from './Components/Shared/site-button/site-button.component';
+import { CreateNewProductComponent } from './Components/Main/Products/create-new-product/create-new-product.component';
+import { NoItemsComponent } from './Components/Shared/no-items/no-items.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { TableDataComponent } from './Components/Shared/table-data/table-data.component';
+
 
 @NgModule({
   declarations: [
@@ -47,12 +54,18 @@ import { ProductsIndexComponent } from './Components/Main/Products/index/index.c
     QuantityControlComponent,
     SummaryComponent,
     SelectInputComponent,
-    PaymentComponent
+    PaymentComponent,
+    PageControlsComponent,
+    SiteButtonComponent,
+    CreateNewProductComponent,
+    NoItemsComponent,
+    TableDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ZXingScannerModule,
+    NgxDatatableModule,
     FormsModule
   ],
   providers: [

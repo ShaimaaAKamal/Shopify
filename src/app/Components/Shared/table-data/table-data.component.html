@@ -1,0 +1,70 @@
+
+
+            <!-- <div class="datatable-container">
+  <input
+    type="text"
+    placeholder="Search"
+    (input)="updateFilter($event)"
+    class="form-control mb-2"
+  />
+
+  <ngx-datatable
+    *ngIf="tableVisible"
+    class="material responsive"
+    [rows]="filteredRows"
+    [columns]="displayedColumns"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [rowHeight]="rowHeight"
+    [scrollbarH]="currentScreenWidth < TABLET_BREAKPOINT"
+    [scrollbarV]="true"
+    [footerHeight]="50"
+    [limit]="10"
+    [selectionType]="selectionType"
+    [selected]="selected"
+    (select)="onSelect($event)"
+    [offset]="page"
+    (page)="onPage($event)"
+  >
+    <ng-template #checkbox let-row="row" let-isSelected="isSelected" let-onCheckboxChange="onCheckboxChange">
+      <input
+        type="checkbox"
+        [checked]="isSelected"
+        (change)="onCheckboxChange($event, row)"
+      />
+    </ng-template>
+  </ngx-datatable>
+</div> -->
+
+<!-- <div #tableContainer class="datatable-container" ngSkipHydration> -->
+  <div #tableContainer class="datatable-container" [class.resizing]="isResizing" ngSkipHydration>
+  <input type="text" placeholder="Search" (input)="updateFilter($event)" class="form-control mb-3" />
+    <ngx-datatable
+      *ngIf="isBrowser"
+      class="bootstrap responsive"
+      [rows]="filteredRows"
+      [rowIdentity]="identityFn"
+      [columns]="displayedColumns"
+      [columnMode]="'force'"
+      [headerHeight]="headerHeight"
+      [footerHeight]="footerHeight"
+      [rowHeight]="'auto'"
+      [limit]="10"
+      [selectionType]="selectionType"
+      [selected]="selected"
+      (select)="onSelect($event)"
+      [offset]="page"
+      (page)="onPage($event)"
+      [count]="filteredRows"
+    >
+      <ng-template #checkbox let-row="row" let-isSelected="isSelected" let-onCheckboxChange="onCheckboxChange">
+        <input
+          type="checkbox"
+          [checked]="isSelected"
+          (change)="onCheckboxChange($event, row)"
+          class="datatable-checkbox"
+        />
+      </ng-template>
+    </ngx-datatable>
+
+</div>
