@@ -10,12 +10,14 @@ import { OrdersIndexComponent as Orders } from './Components/Main/Orders/index/i
 import { ProductsIndexComponent as Products} from './Components/Main/Products/index/index.component';
 import { SalesPersonComponent } from './Components/Main/sales-person/sales-person.component';
 import { ReturnOrderComponent } from './Components/Main/return-order/return-order.component';
+import { CreateNewProductComponent } from './Components/Main/Products/create-new-product/create-new-product.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
   {path:'Home',component:HomeComponent},
   {path:'Shopping',redirectTo:'Home'},
   {path:'Products',component:Products},
+  {path:'Add_New_Product',component:CreateNewProductComponent},
   {path:'Orders',component:Orders},
   {path:'Customers',component:Customers},
   {path:'Discounts',component:Discounts},
