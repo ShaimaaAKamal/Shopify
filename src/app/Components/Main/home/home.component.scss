@@ -22,3 +22,12 @@
     width:700px;
   }
 }
+.list-group{
+    top:30px;
+    width:72%;
+    left:26%;
+   li{
+    color:$semi-dark  !important;
+    border-color: $semi-dark !important;
+   }
+}
