@@ -1,6 +1,7 @@
 import { Component, HostListener, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NavItem } from '../../../Interfaces/nav-item';
+import { CommonService } from '../../../Services/Common/common.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -10,7 +11,9 @@ import { NavItem } from '../../../Interfaces/nav-item';
 })
 export class SideNavComponent {
   private platformId = inject(PLATFORM_ID); // Injecting PLATFORM_ID directly
-  isCollapsed:boolean = false;
+  // isCollapsed:boolean = false;
+    isCollapsed!:boolean;
+
   personImage:string="person.jpg";
   salesPersonName:string='Ahmed Kamal'
   sectionOneNavItems:NavItem[] = [
@@ -27,13 +30,21 @@ export class SideNavComponent {
     { name: 'Arabic', icon: 'fa-solid fa-globe' },
     { name: 'Return_Order', icon: 'fa-solid fa-right-left' },
     { name: 'End_Day', icon: 'fa-solid fa-rectangle-xmark' },
+    { name: 'Hold_Orders', icon: "fa-solid fa-hourglass-start" },
   ];
 
   @HostListener('window:resize')
   onResize() {
     this.setIsCollapsed();
   }
- ngOnInit() {
+
+  constructor(private __CommonService:CommonService){
+    this.__CommonService.isCollapse.subscribe({
+      next:isCollapse => this.isCollapsed=isCollapse
+    })
+  }
+
+  ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.setIsCollapsed();
       window.addEventListener('resize', this.setIsCollapsed.bind(this));
@@ -43,12 +54,14 @@ export class SideNavComponent {
   private setIsCollapsed() {
     if (isPlatformBrowser(this.platformId)) {
       if(window.innerWidth < 768)
-      this.isCollapsed = true;
+      // this.isCollapsed = true;
+    this.__CommonService.isCollapse.next(true);
     }
   }
 
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed ;
+    this.__CommonService.isCollapse.next(this.isCollapsed);
     this.setIsCollapsed();
   }
 }
