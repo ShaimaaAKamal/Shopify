@@ -27,10 +27,9 @@ export class SelectInputComponent<T extends Record<string, any>>{
 
   onSelectionChange(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;
-     console.log(value);
     // Try to find the actual option object based on the selected value
-    const selected = this.options.find((opt: any) => String(opt) === value || String((opt as any)?.id) === value);
-
+    // const selected = this.options.find((opt: any) => String(opt) === value || String((opt as any)?.id) === value);
+        const selected = this.options.find((opt: any) => String((opt as any)?.id) === value);
     if (selected) {
       this.selectedOption.emit(selected);
     }

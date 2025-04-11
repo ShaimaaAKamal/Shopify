@@ -3,6 +3,7 @@ import { OrderCalculationsService } from '../../../../Services/OrderCalculations
 import { OrderProductsService } from '../../../../Services/OrderProduct/order-products.service';
 import { OrdersService } from '../../../../Services/Orders/orders.service';
 import { CommonService } from '../../../../Services/Common/common.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-payment',
@@ -39,9 +40,12 @@ private _discountValue: number = 0;
     ,private __OrderProductService:OrderProductsService,
     private __OrdersService:OrdersService
     ,private __CommonService:CommonService
+    ,private __ActivatedRoute:ActivatedRoute
    ){}
 
   ngOnInit(): void {
+      const id = this.__ActivatedRoute.snapshot.paramMap.get('id');
+      console.log(id);
         this.code=this.generateOrderCode();
          this.paymentMethods = [
       {

@@ -30,6 +30,7 @@ import { CreateNewProductComponent } from './Components/Main/Products/create-new
 import { NoItemsComponent } from './Components/Shared/no-items/no-items.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { TableDataComponent } from './Components/Shared/table-data/table-data.component';
+import { LayoutComponent } from './Components/Shared/layout/layout.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { TableDataComponent } from './Components/Shared/table-data/table-data.co
     SiteButtonComponent,
     CreateNewProductComponent,
     NoItemsComponent,
-    TableDataComponent
+    TableDataComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +73,7 @@ import { TableDataComponent } from './Components/Shared/table-data/table-data.co
   providers: [
     provideClientHydration(withEventReplay())
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
