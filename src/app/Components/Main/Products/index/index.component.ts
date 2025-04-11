@@ -18,10 +18,11 @@ export class ProductsIndexComponent  {
   }
 
  ngOnInit() {
-    this.columns = [
+
+   this.columns = [
     {
     name: '',
-    prop: '$$checkbox', // Changed to unique prop name
+    prop: '$$checkbox',
     width: 50,
     sortable: false,
     canAutoResize: false,
@@ -32,18 +33,16 @@ export class ProductsIndexComponent  {
     cellTemplate: null,
     isCheckboxColumn: true
   },
-      { name: 'Name', prop: 'name' ,  mobileVisible: true,
-    tabletVisible: true},
-      { name: 'Price', prop: 'price' ,  mobileVisible: true,
-    tabletVisible: true},
-      { name: 'Quantity', prop: 'quantity' },
-      { name: 'Tax', prop: 'tax' },
+      { name: 'Name', prop: 'name',mobileVisible: true, tabletVisible: true },
+      { name: 'Price', prop: 'price' ,  mobileVisible: false, tabletVisible: true},
+      { name: 'Quantity', prop: 'quantity',  mobileVisible: false, tabletVisible: false },
+      { name: 'Tax', prop: 'tax',   mobileVisible: false, tabletVisible: false },
       { name: 'Status', prop: 'status',
       cellClass: ({ row }: any) => {
     return row.status === 'Active' ? 'status-active' : 'status-inactive';
   }
   },
-      { name: 'Barcode', prop: 'barcode' },
+      { name: 'Barcode', prop: 'barcode', mobileVisible: false, tabletVisible: false},
     ];
 }
 
