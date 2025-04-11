@@ -1,25 +1,25 @@
+<!--
+<div #tableContainer class="datatable-container" [class.resizing]="isResizing" ngSkipHydration>
+  <input type="text" placeholder="Search" (input)="updateFilter($event)" class="form-control mb-3" />
 
-
-            <!-- <div class="datatable-container">
-  <input
-    type="text"
-    placeholder="Search"
-    (input)="updateFilter($event)"
-    class="form-control mb-2"
-  />
+  <div *ngIf="!tableVisible" class="table-loading">
+    <span>Adjusting table layout...</span>
+  </div>
 
   <ngx-datatable
-    *ngIf="tableVisible"
-    class="material responsive"
+    #table
+    *ngIf="isBrowser && tableVisible"
+    [attr.data-resize-key]="resizeCounter"
+    class="bootstrap expandable"
     [rows]="filteredRows"
+    [rowIdentity]="identityFn"
     [columns]="displayedColumns"
     [columnMode]="'force'"
-    [headerHeight]="50"
+    [headerHeight]="headerHeight"
+    [footerHeight]="footerHeight"
     [rowHeight]="rowHeight"
-    [scrollbarH]="currentScreenWidth < TABLET_BREAKPOINT"
-    [scrollbarV]="true"
-    [footerHeight]="50"
     [limit]="10"
+    [count]="filteredRows.length"
     [selectionType]="selectionType"
     [selected]="selected"
     (select)="onSelect($event)"
@@ -31,40 +31,51 @@
         type="checkbox"
         [checked]="isSelected"
         (change)="onCheckboxChange($event, row)"
+        class="datatable-checkbox"
       />
     </ng-template>
   </ngx-datatable>
 </div> -->
 
-<!-- <div #tableContainer class="datatable-container" ngSkipHydration> -->
-  <div #tableContainer class="datatable-container" [class.resizing]="isResizing" ngSkipHydration>
+<div #tableContainer class="datatable-container" [class.resizing]="isResizing" ngSkipHydration>
   <input type="text" placeholder="Search" (input)="updateFilter($event)" class="form-control mb-3" />
-    <ngx-datatable
-      *ngIf="isBrowser"
-      class="bootstrap responsive"
-      [rows]="filteredRows"
-      [rowIdentity]="identityFn"
-      [columns]="displayedColumns"
-      [columnMode]="'force'"
-      [headerHeight]="headerHeight"
-      [footerHeight]="footerHeight"
-      [rowHeight]="'auto'"
-      [limit]="10"
-      [selectionType]="selectionType"
-      [selected]="selected"
-      (select)="onSelect($event)"
-      [offset]="page"
-      (page)="onPage($event)"
-      [count]="filteredRows"
-    >
-      <ng-template #checkbox let-row="row" let-isSelected="isSelected" let-onCheckboxChange="onCheckboxChange">
-        <input
-          type="checkbox"
-          [checked]="isSelected"
-          (change)="onCheckboxChange($event, row)"
-          class="datatable-checkbox"
-        />
-      </ng-template>
-    </ngx-datatable>
 
+  <div *ngIf="!tableVisible" class="table-loading">
+    <span>Adjusting table layout...</span>
+  </div>
+
+  <ngx-datatable
+    #table
+    *ngIf="isBrowser && tableVisible"
+    [attr.data-resize-key]="resizeCounter"
+    class="bootstrap expandable"
+    [rows]="filteredRows"
+    [rowIdentity]="identityFn"
+    [columns]="displayedColumns"
+    [columnMode]="'force'"
+    [headerHeight]="headerHeight"
+    [footerHeight]="footerHeight"
+    [rowHeight]="rowHeight"
+    [limit]="10"
+    [count]="filteredRows.length"
+    [selectionType]="selectionType"
+    [selected]="selected"
+    (select)="onSelect($event)"
+    [offset]="page"
+    (page)="onPage($event)"
+    [scrollbarV]="true"
+    [scrollbarH]="true"
+    [externalPaging]="false"
+    [externalSorting]="false"
+    [style.height]="tableHeight"
+  >
+    <ng-template #checkbox let-row="row" let-isSelected="isSelected" let-onCheckboxChange="onCheckboxChange">
+      <input
+        type="checkbox"
+        [checked]="isSelected"
+        (change)="onCheckboxChange($event, row)"
+        class="datatable-checkbox"
+      />
+    </ng-template>
+  </ngx-datatable>
 </div>

@@ -1,38 +1,71 @@
+@use "../../../../assets/styles/variables.scss" as *;
 .datatable-container {
   width: 100%;
-  overflow: auto;
-  min-height: 300px;
+  position: relative;
+  min-height: 200px; // Prevent layout shifts
+  height: 100%;
 
-  ngx-datatable {
+  .table-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    span {
+      padding: 8px 16px;
+      border-radius: 4px;
+      background-color: #f8f9fa;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+   ::ng-deep .ngx-datatable{
+    width: 100%;
+    max-width: 100%;
     transition: opacity 0.3s ease;
 
     &.resizing {
       opacity: 0.9;
     }
 
-    ::ng-deep .datatable-body-cell {
+     .datatable-body-cell {
       white-space: normal;
       word-break: break-word;
     }
 
-    ::ng-deep .status-active *,
-    ::ng-deep .status-inactive * {
+     .status-active *,
+     .status-inactive * {
       width: fit-content;
       padding: 0.1rem 0.5rem;
       border-radius: 0.8rem;
     }
 
-    ::ng-deep .status-active *{
+     .status-active *{
       background-color: #e0ffe0;
       color: #2e7d32;
     }
 
-    ::ng-deep .status-inactive *{
+     .status-inactive *{
       background-color: #ffe0e0;
       color: #c62828;
     }
-    
-  }
 
+   &.bootstrap {
+     .datatable-footer {
+    background-color: $semi-dark !important;}
+  .datatable-body-row {
+    &.active,
+    &.selected {
+      .datatable-body-cell,
+      .datatable-row-group {
+        background-color: $light !important; // Bootstrap success light
+        color: $semi-dark !important;            // Bootstrap success dark
+      }
+    }
+  }
 }
+}
+   }
+
+
